@@ -1,0 +1,12 @@
+enumerate can only be used once! to use again, save as list.
+
+xEnum = enumerate(someList)
+
+for i,x in xEnum:
+  foo(i,x)
+
+Will NOT work!
+
+Do this:
+
+xEnum = list(enumerate(someList))
