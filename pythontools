@@ -1,4 +1,17 @@
-#to flatten a list use this lit comprehension:
+#to flatten a 2-d list use this list comprehension:
 
-def flatten(xss):
-    return [x for xs in xss for x in xs]
+def flatten(some2dList):
+    return [x for xs in some2dList for x in xs]
+
+# to get the column sum of a rectangular 2-d list:
+
+def colSum(some2dList, col):
+    return sum(row[column] for row in data)
+
+# to transpose a rectangular 2-d list:
+
+def transposeList(some2dList):
+    numCols = len(some2dList[0])
+    return [[row[col] for row in some2dList] for col in range(numCols)]
+            
+        
