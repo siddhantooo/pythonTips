@@ -1,0 +1,13 @@
+df.loc[:,['column_name']] returns a DataFrame while df.loc[:,'column_name'] returns a Series
+Similarly, df[['column_name']] is a DF while df['column_name'] is a Series.
+
+---------------------------------------------------
+
+df.loc[:,['col1','col2']] = df.col.str.split(expand=True) does not work!
+df[['col1','col2']] = df.col.str.split(expand=True) works!
+This is because of index alignment that occurs when using .loc and .iloc https://stackoverflow.com/questions/69954697/why-does-loc-assignment-with-two-sets-of-brackets-result-in-nan-in-a-pandas-dat
+Use .values or .to_numpy() or rename the columns on the RHS if .loc/.iloc is used.
+
+---------------------------------------------------
+
+
